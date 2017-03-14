@@ -96,5 +96,16 @@ namespace filter
             Filters filter = new Brighter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new SobelFilte();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

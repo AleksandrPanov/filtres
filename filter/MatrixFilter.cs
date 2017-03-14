@@ -24,7 +24,7 @@ namespace filter
             float resultG = 0;
             float resultB = 0;
             for (int l = -radiusX; l <= radiusY; l++)
-                for (int k = -radiusX; k<= radiusX; k++)
+                for (int k = -radiusX; k <= radiusX; k++)
                 {
                     int idX = Clamp(x + k, 0, sourceImage.Width - 1);
                     int idY = Clamp(y + k, 0, sourceImage.Height - 1);
