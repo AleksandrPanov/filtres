@@ -15,11 +15,10 @@ namespace filter
             Color sourceColor = sourceImage.GetPixel(x, y);
 
             int intensity =(int)(0.36*sourceColor.R + 0.53*sourceColor.G + 0.11*sourceColor.B);
-            Color resultColor = Color.FromArgb
-                (Clamp(intensity, 0, 255),
-                Clamp(intensity, 0, 255),
-                Clamp(intensity, 0, 255));
-            return resultColor;
+           return Color.FromArgb
+                (intensity,
+                intensity,
+                intensity);
         }
     }
 }
