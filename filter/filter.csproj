@@ -53,8 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="InvertFilter.cs" />
+    <Compile Include="PixelFilters\GrayScaleFilter.cs" />
+    <Compile Include="PixelFilters\InvertFilter.cs" />
     <Compile Include="main.cs" />
+    <Compile Include="MatixFilters\BlurFilter.cs" />
+    <Compile Include="MatixFilters\GaussianFilter.cs" />
+    <Compile Include="MatrixFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -81,6 +85,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
