@@ -33,11 +33,10 @@ namespace filter
                     resultG += neighborColor.G * kernel[k + radiusX, l + radiusY];
                     resultB += neighborColor.B * kernel[k + radiusX, l + radiusY];                   
                 }
-            return Color.FromArgb(
-                       Clamp((int)resultR, 0, 255),
+            return Color.FromArgb
+                       (Clamp((int)resultR, 0, 255),
                        Clamp((int)resultG, 0, 255),
-                       Clamp((int)resultB, 0, 255)
-                       );
+                       Clamp((int)resultB, 0, 255));
         }
     }
 }

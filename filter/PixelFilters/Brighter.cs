@@ -7,17 +7,16 @@ using System.Drawing;
 
 namespace filter
 {
-    class Sepia : Filters
+    class Brighter : Filters
     {
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             Color sourceColor = sourceImage.GetPixel(x, y);
-            int intensity = (int)(0.36 * sourceColor.R + 0.53 * sourceColor.G + 0.11 * sourceColor.B);
-            int k = 10;
+            int delta = 10;
             return Color.FromArgb
-                (Clamp(intensity + 2 * k, 0, 255),
-                Clamp(intensity + (int)(0.5 * k), 0, 255),
-                Clamp((intensity - k), 0, 255));
+                (Clamp(sourceColor.R+ delta, 0, 255),
+                Clamp(sourceColor.G + delta, 0, 255),
+                Clamp(sourceColor.B + delta, 0, 255));
         }
     }
 }

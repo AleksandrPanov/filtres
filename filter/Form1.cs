@@ -90,5 +90,11 @@ namespace filter
             Filters filter = new Sepia();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void яркостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new Brighter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
