@@ -35,7 +35,7 @@ namespace filter
         {
             if (image != null)
             {
-                InvertFilter filter = new InvertFilter();
+                Filters filter = new InvertFilter();
                 backgroundWorker1.RunWorkerAsync(filter);
             }
         }
@@ -76,6 +76,18 @@ namespace filter
         private void гауссовоРазмытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new GaussianFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void чернобелыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new GrayScaleFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new Sepia();
             backgroundWorker1.RunWorkerAsync(filter);
         }
     }
