@@ -7,9 +7,9 @@ using System.Drawing;
 
 namespace filter
 {
-    class Sepia : Filters
+    class SepiaFilter : Filters
     {
-        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        public override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             Color sourceColor = sourceImage.GetPixel(x, y);
             int intensity = (int)(0.36 * sourceColor.R + 0.53 * sourceColor.G + 0.11 * sourceColor.B);

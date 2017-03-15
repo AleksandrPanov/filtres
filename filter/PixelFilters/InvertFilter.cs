@@ -9,7 +9,7 @@ namespace filter
 {
     class InvertFilter : Filters
     {
-        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        public override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             Color sourceColor = sourceImage.GetPixel(x, y);
             return Color.FromArgb

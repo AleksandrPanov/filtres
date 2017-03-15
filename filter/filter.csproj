@@ -53,7 +53,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MatixFilters\SobelFilters.cs" />
+    <Compile Include="MatixFilters\EmbossingFilter.cs" />
+    <Compile Include="MatixFilters\HarshnessFilter.cs" />
+    <Compile Include="MatixFilters\MotionBlurFilter.cs" />
+    <Compile Include="MatixFilters\SobelFilterXY.cs" />
     <Compile Include="PixelFilters\Brighter.cs" />
     <Compile Include="PixelFilters\GrayScaleFilter.cs" />
     <Compile Include="PixelFilters\InvertFilter.cs" />
@@ -61,8 +64,10 @@
     <Compile Include="MatixFilters\BlurFilter.cs" />
     <Compile Include="MatixFilters\GaussianFilter.cs" />
     <Compile Include="MatrixFilter.cs" />
-    <Compile Include="PixelFilters\Sepia.cs" />
-    <Compile Include="PixelFilters\SobelFilte.cs" />
+    <Compile Include="PixelFilters\SepiaFilter.cs" />
+    <Compile Include="PixelFilters\ShiftFilter.cs" />
+    <Compile Include="PixelFilters\SobelFilter.cs" />
+    <Compile Include="PixelFilters\TurnFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

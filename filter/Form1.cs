@@ -87,7 +87,7 @@ namespace filter
 
         private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new Sepia();
+            Filters filter = new SepiaFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
@@ -97,15 +97,59 @@ namespace filter
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
-        private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Filters filter = new SobelFilte();
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
 
         private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Filters filter = new Brighter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
 
+        private void собельXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new SobelFilterX();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void собельYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new SobelFilterY();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void выделениеКонтуровToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new SobelFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void резкостьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Filters filter = new HarshnessFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new EmbossingFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void размытиеToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MotionBlurFilter filter = new MotionBlurFilter(5);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void повернутьНа45ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new TurnFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void сдвинутьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new ShiftFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
         }
     }
 }

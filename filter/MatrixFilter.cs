@@ -15,7 +15,7 @@ namespace filter
         {
             this.kernel = kernal;
         }
-        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        public override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             int radiusX = kernel.GetLength(0)/2;
             int radiusY = kernel.GetLength(1)/2;
@@ -23,11 +23,11 @@ namespace filter
             float resultR = 0;
             float resultG = 0;
             float resultB = 0;
-            for (int l = -radiusX; l <= radiusY; l++)
+            for (int l = -radiusY; l <= radiusY; l++)
                 for (int k = -radiusX; k <= radiusX; k++)
                 {
                     int idX = Clamp(x + k, 0, sourceImage.Width - 1);
-                    int idY = Clamp(y + k, 0, sourceImage.Height - 1);
+                    int idY = Clamp(y + l, 0, sourceImage.Height - 1);
                     Color neighborColor = sourceImage.GetPixel(idX, idY);
                     resultR += neighborColor.R * kernel[k + radiusX, l + radiusY];
                     resultG += neighborColor.G * kernel[k + radiusX, l + radiusY];

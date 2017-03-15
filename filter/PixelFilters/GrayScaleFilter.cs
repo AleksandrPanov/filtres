@@ -10,7 +10,7 @@ namespace filter
     class GrayScaleFilter : Filters
     {
         public GrayScaleFilter() { }
-        protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
+        public override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             Color sourceColor = sourceImage.GetPixel(x, y);
 
