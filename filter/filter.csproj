@@ -54,7 +54,11 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MathMorphologyFilter.cs" />
+    <Compile Include="MathMorphology\CloseFilter.cs" />
     <Compile Include="MathMorphology\DilationFilter.cs" />
+    <Compile Include="MathMorphology\ErosionFilter.cs" />
+    <Compile Include="MathMorphology\GradFilter.cs" />
+    <Compile Include="MathMorphology\OpenFilter.cs" />
     <Compile Include="MatixFilters\EmbossingFilter.cs" />
     <Compile Include="MatixFilters\HarshnessFilter.cs" />
     <Compile Include="MatixFilters\MotionBlurFilter.cs" />

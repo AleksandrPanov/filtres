@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 namespace filter
 {
-    class DilationFilter : MathMorphologyFilter
+    class ErosionFilter : MathMorphologyFilter
     {
-        public DilationFilter() : base(mask, 0) {     }
+        public ErosionFilter() : base(mask, 1) {}
         public override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             return base.calculateNewPixelColor(sourceImage, x, y);

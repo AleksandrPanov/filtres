@@ -97,7 +97,6 @@ namespace filter
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
-
         private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new Brighter();
@@ -149,6 +148,36 @@ namespace filter
         private void сдвинутьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new ShiftFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void сужениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new ErosionFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void расширениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new DilationFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void открытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new OpenFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void закрытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new CloseFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void градиентToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new GradFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
     }
