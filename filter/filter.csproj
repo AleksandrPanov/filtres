@@ -65,11 +65,13 @@
     <Compile Include="MatixFilters\SobelFilterXY.cs" />
     <Compile Include="PixelFilters\Brighter.cs" />
     <Compile Include="PixelFilters\GrayScaleFilter.cs" />
+    <Compile Include="PixelFilters\GrayWorldFilter.cs" />
     <Compile Include="PixelFilters\InvertFilter.cs" />
     <Compile Include="main.cs" />
     <Compile Include="MatixFilters\BlurFilter.cs" />
     <Compile Include="MatixFilters\GaussianFilter.cs" />
     <Compile Include="MatrixFilter.cs" />
+    <Compile Include="PixelFilters\LinearStretching.cs" />
     <Compile Include="PixelFilters\SepiaFilter.cs" />
     <Compile Include="PixelFilters\ShiftFilter.cs" />
     <Compile Include="PixelFilters\SobelFilter.cs" />

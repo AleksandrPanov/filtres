@@ -180,5 +180,17 @@ namespace filter
             Filters filter = new GradFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void серыйМирToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new GrayWorldFilter(ref image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void линейнаяКоррекцияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new LinearStretching(ref image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
