@@ -192,5 +192,17 @@ namespace filter
             Filters filter = new LinearStretching(ref image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void задатьИнструментToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(Application.StartupPath + @"\gr.exe");
+            Console.ReadLine();
+        }
+
+        private void медианныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MedianFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

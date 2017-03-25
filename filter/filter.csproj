@@ -53,6 +53,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridView.Designer.cs">
+      <DependentUpon>GridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Instuments\ColorAndValue.cs" />
     <Compile Include="MathMorphologyFilter.cs" />
     <Compile Include="MathMorphology\CloseFilter.cs" />
     <Compile Include="MathMorphology\DilationFilter.cs" />
@@ -61,6 +68,7 @@
     <Compile Include="MathMorphology\OpenFilter.cs" />
     <Compile Include="MatixFilters\EmbossingFilter.cs" />
     <Compile Include="MatixFilters\HarshnessFilter.cs" />
+    <Compile Include="MatixFilters\MedianFilter.cs" />
     <Compile Include="MatixFilters\MotionBlurFilter.cs" />
     <Compile Include="MatixFilters\SobelFilterXY.cs" />
     <Compile Include="PixelFilters\Brighter.cs" />
@@ -79,6 +87,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridView.resx">
+      <DependentUpon>GridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
