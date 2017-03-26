@@ -194,15 +194,25 @@ namespace filter
         }
 
         private void задатьИнструментToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start(Application.StartupPath + @"\gr.exe");
-            Console.ReadLine();
+        {     
+                  
         }
 
         private void медианныйToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new MedianFilter();
             backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void задатьИнструментToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GridView form2 = new GridView();
+            form2.Show();
+        }
+
+        private void стандартныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MathMorphologyFilter.mask = new int[3, 3] { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
         }
     }
 }

@@ -9,7 +9,7 @@ namespace filter
 {
     class MathMorphologyFilter : Filters
     {
-        protected static int[,] mask = new int[3, 3] { {0,1,0 }, { 1,1,1}, {0,1,0 } };
+        public static int[,] mask = new int[3, 3] { {0,1,0 }, { 1,1,1}, {0,1,0 } };
         protected delegate bool comparison(int a, int b);
         comparison[] comp = new comparison[2];
 
