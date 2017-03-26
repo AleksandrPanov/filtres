@@ -10,7 +10,6 @@ namespace filter
 {
     class GradFilter : MathMorphologyFilter
     {
-        int[,] ar;
         public GradFilter()
         { 
             numFiters = 3;
@@ -22,16 +21,15 @@ namespace filter
         {
             Bitmap resultImage1 = calculateOneImage(sourceImage, worker, 1);
             Bitmap resultImage2 = calculateOneImage(sourceImage, worker, 2);
-            ar = new int[resultImage2.Width, resultImage2.Height];
-            int xM = resultImage2.Width;
-            int yM = resultImage2.Height;
-            for (int x = 0; x < xM; x++)
-                for (int y = 0; y < yM; y++)
-                    ar[x, y] = (resultImage2.GetPixel(x, y).R + resultImage2.GetPixel(x, y).G + resultImage2.GetPixel(x, y).B)/3;
-            MathMorphologyFilter.SetMask(ar);
-            f[2] = new ErosionFilter();
-            Bitmap res = calculateOneImage(resultImage1, worker, 3);
-            return res;
+            for (int x = 0; x < resultImage1.Width; x++)
+            {
+                worker.ReportProgress((int)((float)(resultImage1.Width * 2 + x) / (resultImage1.Width * 3) * 100));
+                if (worker.CancellationPending)
+                    return null;
+                for (int y = 0; y < resultImage1.Height; y++)
+                    resultImage1.SetPixel(x, y, GetDeltaColor(resultImage1.GetPixel(x,y), resultImage2.GetPixel(x,y)));
+            }
+            return resultImage1;
         }
         private Bitmap calculateOneImage(Bitmap sourceImage, BackgroundWorker  worker, int indFilt)
         {
@@ -45,6 +43,13 @@ namespace filter
                     resultImage1.SetPixel(x, y, f[indFilt-1].calculateNewPixelColor(sourceImage, x, y));
             }
             return resultImage1;
+        }
+        private Color GetDeltaColor(Color a, Color b)
+        {
+            return Color.FromArgb
+                 (Clamp(a.R - b.R, 0, 255),
+                 Clamp(a.G - b.G, 0, 255),
+                 Clamp(a.B - b.B, 0, 255));
         }
     }
 }

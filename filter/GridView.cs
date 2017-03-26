@@ -74,7 +74,7 @@ namespace filter
                 MathMorphologyFilter.mask = new int[2 * rad + 1, 2 * rad + 1];
                 for (int i = 0; i < 2 * rad + 1; i++)
                     for (int j = 0; j < 2 * rad + 1; j++)
-                        MathMorphologyFilter.mask[i,j] = (int)dataGridView1[i, j].Value;               
+                        MathMorphologyFilter.mask[i,j] = Convert.ToInt32(dataGridView1[i, j].Value);               
             }
         }
     }
